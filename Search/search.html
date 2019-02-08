@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+
+    <title>Search person</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+
+
+</head>
+
+<body>
+    <h3 id="NameH3">Type a Name for searching in base</h3>
+    <h1 class="IconUser"> <i class='far fa-user user fa-fw'></i></h1>
+
+
+    <div class="container">
+        <div id="searchBox">
+            <div class="form-row">
+                <div class="input-group margin-bottom-sm">
+
+                    <div class="input-group">
+
+                        <input type="text" class="form-control" id="search" placeholder="">
+                    </div>
+                </div>
+                <button type="button" id="Search" class="btn btn-secondary btn-lg btn-block">
+                    <i class="fas fa-search"></i>
+
+                </button><br>
+                <h2 id="err"></h2><br><br>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">LName</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Favorite color</th>
+                    <th scope="col">Passport ID</th>
+                    <th scope="col">Mail</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Adress</th>
+                    <th scope="col">Account Date Created</th>
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row" id="Name">Name</td>
+                    <td id="Lname">LName</td>
+                    <td id="PhoneNumber">Phone Number</td>
+                    <td id="FavoriteColor">Favorite color</td>
+                    <td id="PsID">Passport ID</td>
+                    <td id="Mail">Mail</td>
+                    <td id="Password">Password</td>
+                    <td id="Date">Date</td>
+                    <td id="Adress">Adress</td>
+                    <td id="CrDate">Account Date Created</td>
+
+                </tr>
+            </tbody>
+        </table>
+        <div id="HBimg">
+
+        </div>
+
+    </div>
+
+
+
+    <script src="search.js"></script>
+
+</body>
+
+</html>

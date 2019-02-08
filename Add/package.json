@@ -1,0 +1,16 @@
+{
+  "name": "sign_up",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gor",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mkdirp": "^0.5.1",
+    "socket.io": "^2.2.0"
+  }
+}

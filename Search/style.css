@@ -1,0 +1,31 @@
+body{
+  background-color: #212529;
+  color: white;
+}
+form{
+  padding :30px;
+}
+#searchBox{
+  margin-top: 3%;
+}
+h2{
+  color: white;
+}
+img{
+  width: 100%;
+  cursor: pointer;
+
+}
+.user{
+  font-size:25px;
+  height:31px ;
+  margin-top: 7px;
+} 
+#NameH3{
+  text-align: center;
+  margin-top: 100px;
+}
+.IconUser{
+  text-align: center;
+  margin-top: 40px;
+}
