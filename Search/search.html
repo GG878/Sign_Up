@@ -27,13 +27,15 @@
 
                     <div class="input-group">
 
-                        <input type="text" class="form-control" id="search" placeholder="">
+                        <input type="text" class="form-control" id="search" placeholder="Input a Name">
                     </div>
                 </div>
                 <button type="button" id="Search" class="btn btn-secondary btn-lg btn-block">
                     <i class="fas fa-search"></i>
-
-                </button><br>
+                </button>
+                <button type="button" id="All_Users_btn" class="btn btn-secondary btn-lg btn-block">
+                    All Users <i class="fas fa-users"></i>
+                </button>
                 <h2 id="err"></h2><br><br>
             </div>
         </div>
@@ -55,9 +57,9 @@
 
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td scope="row" id="Name">Name</td>
+            <tbody id="myDynamicTable">
+                <tr class="Default">
+                    <td id="Name">Name</td>
                     <td id="Lname">LName</td>
                     <td id="PhoneNumber">Phone Number</td>
                     <td id="FavoriteColor">Favorite color</td>
@@ -68,13 +70,14 @@
                     <td id="Adress">Adress</td>
                     <td id="CrDate">Account Date Created</td>
 
-                </tr>
+                </tr> 
+            
             </tbody>
         </table>
+
         <div id="HBimg">
 
         </div>
-
     </div>
 
 

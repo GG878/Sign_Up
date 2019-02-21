@@ -30,6 +30,7 @@ app.get('/', function (req, res) {
 });
 
 
+var path = "C:/Users/Toshiba/Desktop/JavaScript/programs/Sign_Up/base/"
 
 server.listen(2000);
 io.on("connection", function (socket) {
@@ -44,7 +45,7 @@ io.on("connection", function (socket) {
         var PasswordJSON = JSON.stringify(results[6]);
         var dateJSON = JSON.stringify(results[7])
         var adressJSON = JSON.stringify(results[8])
-        var path = "C:/Users/Toshiba/Desktop/JavaScript/programs/Sign_Up/base/"
+        var status = 0;
         mkdirp(getDirName(path), function (err) {
             if (err) return cb(err);
             fs.readFile(path + "All_Users.json", 'utf8', function (err, data) {
@@ -57,12 +58,21 @@ io.on("connection", function (socket) {
                     if (err) { console.log(err); }
                 })
             })
-            fs.writeFile(path + results[0] + ".json", '{\n\n ' + '"Name":' + NameJSON + ',\n' + '"Lname":' + LnameJSON + ',\n' + '"Phone Number":' + PhoneNumberJSON + ',\n' + '"Background color":' + BkColorJSON + ',\n' + '"Passport ID":' + PsIdJSON + ',\n' + '"Mail":' + MailJSON + ',\n' + '"Password":' + PasswordJSON + ',\n' + '"Date":' + dateJSON + ',\n' + '"adress":' + adressJSON + ',\n' + '"Date of creating":"' + getDate() + '"' + "\n\n}", function (err) { console.log(err); })
+            fs.writeFile(path + results[0] + ".json", '{\n\n ' + '"Name":' + NameJSON + ',\n' + '"Lname":' + LnameJSON + ',\n' + '"Phone Number":' + PhoneNumberJSON + ',\n' + '"Background color":' + BkColorJSON + ',\n' + '"Passport ID":' + PsIdJSON + ',\n' + '"Mail":' + MailJSON + ',\n' + '"Password":' + PasswordJSON + ',\n' + '"Date":' + dateJSON + ',\n' + '"adress":' + adressJSON + ',\n' + '"Date of creating":"' + getDate() + '"' +",\n"+'"status":'+status+ "\n\n}", function (err) { console.log(err); })
 
         });
 
     });
-
+    socket.on("Edit this user", function (Edit_User_Name) {
+        fs.readFile(path + Edit_User_Name + ".json","utf8",function(err,data){
+            if (err) {
+                console.log(err);
+                
+            }
+            let Edit_User_Data = JSON.parse(data);
+            socket.emit("Fill blanks",Edit_User_Data); 
+        })
+    })
 
 
 })
